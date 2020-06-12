@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ITIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Instructor">
+    <Key>
+      <PropertyRef Name="Ins_Id" />
+    </Key>
+    <Property Name="Ins_Id" Type="Int32" Nullable="false" />
+    <Property Name="Ins_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ins_Degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Dept_Id" Type="Int32" />
+    <NavigationProperty Name="Departments" Relationship="ITIModel.FK_Department_Instructor" FromRole="Instructor" ToRole="Department" />
+    <NavigationProperty Name="Department" Relationship="ITIModel.FK_Instructor_Department" FromRole="Instructor" ToRole="Department" />
+  </EntityType>
+  <EntityContainer Name="ITIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Instructors" EntityType="Self.Instructor" />
+    <EntitySet Name="Departments" EntityType="ITIModel.Department" />
+    <AssociationSet Name="FK_Department_Instructor" Association="ITIModel.FK_Department_Instructor">
+      <End Role="Instructor" EntitySet="Instructors" />
+      <End Role="Department" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Instructor_Department" Association="ITIModel.FK_Instructor_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Instructor" EntitySet="Instructors" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Dept_Id" />
+    </Key>
+    <Property Name="Dept_Id" Type="Int32" Nullable="false" />
+    <Property Name="Dept_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dept_Desc" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Dept_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Dept_Manager" Type="Int32" />
+    <Property Name="Manager_hiredate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Instructor" Relationship="ITIModel.FK_Department_Instructor" FromRole="Department" ToRole="Instructor" />
+    <NavigationProperty Name="Instructors" Relationship="ITIModel.FK_Instructor_Department" FromRole="Department" ToRole="Instructor" />
+  </EntityType>
+  <Association Name="FK_Department_Instructor">
+    <End Type="ITIModel.Instructor" Role="Instructor" Multiplicity="0..1" />
+    <End Type="ITIModel.Department" Role="Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instructor">
+        <PropertyRef Name="Ins_Id" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="Dept_Manager" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Instructor_Department">
+    <End Type="ITIModel.Department" Role="Department" Multiplicity="0..1" />
+    <End Type="ITIModel.Instructor" Role="Instructor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="Dept_Id" />
+      </Principal>
+      <Dependent Role="Instructor">
+        <PropertyRef Name="Dept_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,14 @@
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\bin\Debug\Day2TaskEF.exe.config
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\bin\Debug\Day2TaskEF.exe
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\bin\Debug\Day2TaskEF.pdb
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\bin\Debug\EntityFramework.dll
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\bin\Debug\EntityFramework.xml
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\obj\Debug\Day2TaskEF.csprojAssemblyReference.cache
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\obj\Debug\Day2TaskEF.Form1.resources
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\obj\Debug\Day2TaskEF.Properties.Resources.resources
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\obj\Debug\Day2TaskEF.csproj.GenerateResource.cache
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\obj\Debug\Day2TaskEF.csproj.CopyComplete
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\obj\Debug\Day2TaskEF.exe
+C:\Users\Waleed\source\repos\Day2TaskEF\Day2TaskEF\obj\Debug\Day2TaskEF.pdb
